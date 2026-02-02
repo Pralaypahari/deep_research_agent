@@ -9,7 +9,7 @@ document.getElementById("researchBtn").onclick = async () => {
   out.innerHTML = "";
 
   try {
-    const res = await fetch("http://localhost:8000/api/research", {
+    const res = await fetch("http://localhost:8000/research", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
