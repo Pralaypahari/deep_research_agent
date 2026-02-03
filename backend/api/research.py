@@ -1,6 +1,7 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
 from typing import List
+from ai_core.service import run_deep_research
 
 router = APIRouter()
 
@@ -30,12 +31,10 @@ async def run_research(data: ResearchRequest):
     """
     Main research endpoint
     """
-    summary = f"Research summary for: {data.query}"
-
-    sources_used = data.sources if data.sources else ["google", "wikipedia"]
+    result = run_deep_research(data.query)
 
     return ResearchResponse(
         query=data.query,
-        summary=summary,
-        sources_used=sources_used
+        summary="research completed successfully",
+        sources_used=list(result.get("research", {}).keys())
     )
