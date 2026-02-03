@@ -1,12 +1,12 @@
 from langgraph.graph import StateGraph, END
 from ai_core.graph.state import ResearchState
 
-from ai_core.graph.nodes import (
-    search_node,
-    reader_node,
-    critic_node,
-    should_retry
-)
+from ai_core.graph.nodes.search_node import search_node
+from ai_core.graph.nodes.reader_node import reader_node
+from ai_core.graph.nodes.critic_node import critic_node
+from ai_core.graph.nodes.decision_node import should_retry
+
+
 
 def build_research_graph():
     graph = StateGraph(ResearchState)

@@ -9,7 +9,7 @@ document.getElementById("researchBtn").onclick = async () => {
   out.innerHTML = "";
 
   try {
-    const res = await fetch("http://localhost:8000/research", {
+    const res = await fetch("http://localhost:8000/research/query", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -23,9 +23,8 @@ document.getElementById("researchBtn").onclick = async () => {
     status.textContent = "Done";
 
     out.innerHTML = `
-      <b>Plan</b><p>${data.plan || ""}</p>
-      <b>Research</b><p>${data.research || ""}</p>
-      <b>Final Answer</b><p>${data.final_answer || ""}</p>
+      <b>query</b><p>${data.query || ""}</p>
+      <b>status</b><p>${data.summary || ""}</p>
     `;
   } catch (e) {
     status.textContent = "Error";

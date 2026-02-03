@@ -5,4 +5,5 @@ def critic_node(state: ResearchState):
 
     verdict = critique(state["content"])
     state["critique"] = verdict
+    state["retries"] += 1
     return state
