@@ -7,33 +7,37 @@
 
 body {
   height: 100vh;
-  background: linear-gradient(to right, #1b1b2f, #0f0f1a);
+}
+
+/* MAIN LAYOUT */
+.container {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 100vh;
 }
 
-/* MAIN CARD */
-.login-container {
-  width: 360px;
-  background: rgba(0, 0, 0, 0.35);
-  padding: 40px 30px;
-  border-radius: 12px;
-  text-align: center;
+/* LEFT PANEL */
+.left-panel {
+  flex: 1;
+  background: linear-gradient(to bottom, #1b1b2f, #0f0f1a);
+  padding: 40px;
 }
 
-/* 🔥 APP NAME TOP */
-.app-header {
-  color: #ffffff;
-  font-size: 38px;
+/* APP NAME AT TOP */
+.app-name {
+  color: white;
+  font-size: 36px;
   font-weight: bold;
-  margin-bottom: 30px;
 }
 
-/* SIGN IN TEXT */
-.signin-title {
-  color: #ffffff;
-  margin-bottom: 20px;
+/* RIGHT PANEL */
+.right-panel {
+  flex: 1;
+  background: #ffffff;
+  padding: 80px;
+}
+
+.right-panel h2 {
+  margin-bottom: 30px;
 }
 
 /* INPUTS */
@@ -41,31 +45,29 @@ input {
   width: 100%;
   padding: 12px;
   margin-bottom: 15px;
-  border-radius: 6px;
-  border: none;
-  outline: none;
-  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 /* BUTTON */
-.btn-primary {
+button {
   width: 100%;
   padding: 12px;
-  background: #4e8cff;
+  background: #5a7bff;
   border: none;
-  color: #fff;
+  color: white;
   font-size: 16px;
-  border-radius: 6px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
-.btn-primary:hover {
-  background: #3a6edc;
+button:hover {
+  background: #3f5fe0;
 }
 
-/* SIGN UP */
-.signup-text {
+/* SIGNUP */
+.signup {
   margin-top: 15px;
-  color: #bfbfbf;
+  color: #555;
   font-size: 14px;
 }
