@@ -3,28 +3,27 @@ function signup() {
   const password = document.getElementById("signupPassword").value;
 
   if (!email || !password) {
-    alert("Fill all fields");
+    alert("Please fill all fields");
     return;
   }
 
-  localStorage.setItem("email", email);
-  localStorage.setItem("password", password);
+  localStorage.setItem("userEmail", email);
+  localStorage.setItem("userPassword", password);
 
-  alert("Account created successfully");
+  alert("Account created successfully!");
   window.location.href = "login.html";
 }
 
 function login() {
-  const email = document.getElementById("loginEmail").value;
-  const password = document.getElementById("loginPassword").value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
 
-  const savedEmail = localStorage.getItem("email");
-  const savedPassword = localStorage.getItem("password");
+  const savedEmail = localStorage.getItem("userEmail");
+  const savedPassword = localStorage.getItem("userPassword");
 
   if (email === savedEmail && password === savedPassword) {
-    localStorage.setItem("isLoggedIn", "true");
     window.location.href = "../index.html";
   } else {
-    alert("Invalid credentials");
+    alert("Invalid email or password");
   }
 }

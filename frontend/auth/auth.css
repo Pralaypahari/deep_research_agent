@@ -1,68 +1,55 @@
-/* ===== RESET OLD AUTH STYLES ===== */
-.app-name,
-.signin-title {
-  writing-mode: horizontal-tb !important;
-  transform: none !important;
-  position: static !important;
-}
-
-/* ===== LAYOUT ===== */
-.container {
-  display: flex;
+body {
+  margin: 0;
   height: 100vh;
-}
-
-/* LEFT PANEL */
-.left-panel {
-  width: 50%;
-  background: linear-gradient(to bottom, #1b1b2f, #0f0f1a);
-  padding: 40px;
-}
-
-.app-name {
+  background: radial-gradient(circle at top, #1a2a6c, #0f2027);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
   color: white;
-  font-size: 36px;
-  font-weight: bold;
 }
 
-/* RIGHT PANEL */
-.right-panel {
-  width: 50%;
-  background: #ffffff;
-  padding: 80px;
+.auth-container {
+  width: 320px;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  text-align: center;
 }
 
-.signin-title {
-  margin-bottom: 25px;
+.auth-container h2 {
+  margin-bottom: 20px;
 }
 
-/* INPUTS */
-.right-panel input {
+.auth-container input {
   width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px 0;
   border-radius: 5px;
+  border: none;
+  outline: none;
 }
 
-/* BUTTON */
-.auth-btn {
+.auth-container button {
   width: 100%;
-  padding: 12px;
-  background: #4e8cff;
+  padding: 10px;
+  background: #4f8cff;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: 10px;
 }
 
-.auth-btn:hover {
-  background: #3a6edc;
+.auth-container button:hover {
+  background: #3b6fdc;
 }
 
-/* SIGNUP TEXT */
-.signup-text {
+.link {
   margin-top: 15px;
-  font-size: 14px;
-  color: #555;
+}
+
+.link a {
+  color: #9bbcff;
+  text-decoration: none;
 }
