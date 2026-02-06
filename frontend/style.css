@@ -1,5 +1,9 @@
 /* ===== Base ===== */
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
   font-family: Arial, sans-serif;
@@ -12,12 +16,24 @@ body {
 
 /* ===== Header ===== */
 .app-header {
-  padding: 16px;
+  width: 100%;
+  padding: 16px 0;
   text-align: center;
+  background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
   border-bottom: 1px solid #1e293b;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 1px;
 }
 
 .app-header p {
+  margin-top: 4px;
   color: #94a3b8;
   font-size: 14px;
 }
@@ -40,7 +56,9 @@ body {
   padding: 16px;
 }
 
-h2 { margin-bottom: 10px; }
+h2 {
+  margin-bottom: 10px;
+}
 
 /* ===== Input ===== */
 textarea {
@@ -50,9 +68,13 @@ textarea {
   border: 1px solid #1e293b;
   border-radius: 6px;
   padding: 10px;
+  resize: vertical;
 }
 
-textarea:focus { outline: none; border-color: #38bdf8; }
+textarea:focus {
+  outline: none;
+  border-color: #38bdf8;
+}
 
 /* ===== Buttons ===== */
 .controls {
@@ -70,8 +92,24 @@ button {
   font-weight: 600;
 }
 
-#researchBtn { background: #38bdf8; color: #020617; }
-#clearBtn { background: transparent; color: #e5e7eb; border: 1px solid #1e293b; }
+#researchBtn {
+  background: #38bdf8;
+  color: #020617;
+}
+
+#researchBtn:hover {
+  background: #0ea5e9;
+}
+
+#clearBtn {
+  background: transparent;
+  color: #e5e7eb;
+  border: 1px solid #1e293b;
+}
+
+#clearBtn:hover {
+  background: #1e293b;
+}
 
 /* ===== Output ===== */
 .status {
@@ -89,7 +127,9 @@ button {
   overflow-y: auto;
 }
 
-.placeholder { color: #94a3b8; }
+.placeholder {
+  color: #94a3b8;
+}
 
 /* ===== Footer ===== */
 .app-footer {
@@ -102,5 +142,11 @@ button {
 
 /* ===== Mobile ===== */
 @media (max-width: 800px) {
-  .app-container { grid-template-columns: 1fr; }
+  .app-container {
+    grid-template-columns: 1fr;
+  }
+
+  .app-header h1 {
+    font-size: 22px;
+  }
 }
