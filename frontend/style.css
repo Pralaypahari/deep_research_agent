@@ -1,172 +1,71 @@
-/* ===== Base ===== */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background: #0f172a;
-  color: #e5e7eb;
-  min-height: 100vh;
+  height: 100vh;
+  background: linear-gradient(to right, #1b1b2f, #0f0f1a);
   display: flex;
-  flex-direction: column;
-}
-
-/* ===== Header ===== */
-.app-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 70px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-
-  background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
-  border-bottom: 1px solid #1e293b;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
-
-  z-index: 1000;
+  align-items: center;
 }
 
-.app-header h1 {
-  margin: 0;
-  font-size: 28px;
-  font-weight: 700;
+/* MAIN CARD */
+.login-container {
+  width: 360px;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 40px 30px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+/* 🔥 APP NAME TOP */
+.app-header {
   color: #ffffff;
-  letter-spacing: 1px;
+  font-size: 38px;
+  font-weight: bold;
+  margin-bottom: 30px;
 }
 
-.app-header p {
-  margin-top: 4px;
-  color: #94a3b8;
+/* SIGN IN TEXT */
+.signin-title {
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+/* INPUTS */
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
   font-size: 14px;
 }
 
-/* ===== Layout ===== */
-.app-container {
-  flex: 1;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 16px;
-  padding: 16px;
-
-  /* Push main app below fixed header */
-  margin-top: 90px;
-}
-
-/* ===== Panels ===== */
-.control-panel,
-.output-panel {
-  background: #020617;
-  border: 1px solid #1e293b;
-  border-radius: 8px;
-  padding: 16px;
-}
-
-h2 {
-  margin-bottom: 10px;
-}
-
-/* ===== Input ===== */
-textarea {
+/* BUTTON */
+.btn-primary {
   width: 100%;
-  background: #0f172a;
-  color: #e5e7eb;
-  border: 1px solid #1e293b;
-  border-radius: 6px;
-  padding: 10px;
-  resize: vertical;
-}
-
-textarea:focus {
-  outline: none;
-  border-color: #38bdf8;
-}
-
-/* ===== Buttons ===== */
-.controls {
-  display: flex;
-  gap: 8px;
-  margin-top: 12px;
-}
-
-button {
-  flex: 1;
-  padding: 8px;
+  padding: 12px;
+  background: #4e8cff;
   border: none;
+  color: #fff;
+  font-size: 16px;
   border-radius: 6px;
   cursor: pointer;
-  font-weight: 600;
 }
 
-#researchBtn {
-  background: #38bdf8;
-  color: #020617;
+.btn-primary:hover {
+  background: #3a6edc;
 }
 
-#researchBtn:hover {
-  background: #0ea5e9;
-}
-
-#clearBtn {
-  background: transparent;
-  color: #e5e7eb;
-  border: 1px solid #1e293b;
-}
-
-#clearBtn:hover {
-  background: #1e293b;
-}
-
-/* ===== Output ===== */
-.status {
-  font-size: 13px;
-  color: #94a3b8;
-  margin-bottom: 8px;
-}
-
-.output-box {
-  background: #0f172a;
-  border: 1px solid #1e293b;
-  border-radius: 6px;
-  padding: 12px;
-  height: 100%;
-  overflow-y: auto;
-}
-
-.placeholder {
-  color: #94a3b8;
-}
-
-/* ===== Footer ===== */
-.app-footer {
-  text-align: center;
-  padding: 10px;
-  font-size: 12px;
-  color: #94a3b8;
-  border-top: 1px solid #1e293b;
-}
-
-/* ===== Auth Pages ===== */
-.auth-container,
-.auth-box {
-  margin-top: 110px; /* pushes login/signup below header */
-}
-
-/* ===== Mobile ===== */
-@media (max-width: 800px) {
-  .app-container {
-    grid-template-columns: 1fr;
-  }
-
-  .app-header h1 {
-    font-size: 22px;
-  }
+/* SIGN UP */
+.signup-text {
+  margin-top: 15px;
+  color: #bfbfbf;
+  font-size: 14px;
 }
