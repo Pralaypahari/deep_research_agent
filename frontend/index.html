@@ -1,88 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Deep Research Agent</title>
-    <script>
-        if (!localStorage.getItem("isLoggedIn")) {
-        window.location.href = "auth/login.html";
-    }
-    </script>
-    <script>
-        if (!localStorage.getItem("userEmail")) {
-        window.location.href = "auth/login.html";
-    }
-    </script>
-
-
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deep Research Agent</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+  <header>
+    <h1>🔍 Deep Research Agent</h1>
+    <p>AI-powered research, reasoning & synthesis</p>
+  </header>
 
-    <!-- Header -->
-    <header class="app-header">
-        <h1>🔍 Deepsync</h1>
-        <p>AI-powered research, reasoning & synthesis</p>
-    </header>
-    
+  <main class="container">
+    <!-- INPUT -->
+    <section class="panel">
+      <h2>Research Input</h2>
+      <textarea
+        id="queryInput"
+        placeholder="Enter your research question..."
+        rows="6"
+      ></textarea>
 
+      <button id="researchBtn">Run Research</button>
+      <button id="clearBtn" class="secondary">Clear</button>
+    </section>
 
-    <!-- Main Container -->
-    <main class="app-container">
+    <!-- OUTPUT -->
+    <section class="panel">
+      <h2>Research Output</h2>
+      <div id="status" class="status">Idle</div>
+      <div id="output" class="output">
+        <p class="placeholder">Results will appear here…</p>
+      </div>
+    </section>
+  </main>
 
-        <!-- Left Panel: Controls -->
-        <section class="control-panel">
-            <h2>Research Input</h2>
-
-            <textarea
-                id="queryInput"
-                placeholder="Enter your research question..."
-                rows="6"
-            ></textarea>
-
-            <div class="controls">
-                <button id="researchBtn">Run Research</button>
-                <button id="clearBtn">Clear</button>
-            </div>
-
-            <div class="options">
-                <label>
-                    <input type="checkbox" id="useWeb" checked />
-                    Use Web Search
-                </label>
-                <label>
-                    <input type="checkbox" id="useDocs" />
-                    Use Documents
-                </label>
-            </div>
-        </section>
-
-        <!-- Right Panel: Output -->
-        <section class="output-panel">
-            <h2>Research Output</h2>
-
-            <div id="status" class="status">
-                Idle
-            </div>
-
-            <div id="output" class="output-box">
-                <p class="placeholder">
-                    Results will appear here...
-                </p>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="app-footer">
-        <p>Powered by Deep Research Agent • LangChain / Agents / RAG</p>
-    </footer>
-
-    <!-- JS -->
-    <script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
+

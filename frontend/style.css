@@ -1,73 +1,130 @@
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: "Inter", Arial, sans-serif;
 }
 
+/* ===== Base ===== */
 body {
-  height: 100vh;
+  margin: 0;
+  background: #0f172a; /* deep slate */
+  color: #e5e7eb;
 }
 
-/* MAIN LAYOUT */
+/* ===== Header ===== */
+header {
+  padding: 20px;
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  border-bottom: 1px solid #1e293b;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 26px;
+  color: #38bdf8; /* cyan accent */
+}
+
+header p {
+  margin: 6px 0 0;
+  opacity: 0.8;
+  font-size: 14px;
+  color: #cbd5f5;
+}
+
+/* ===== Layout ===== */
 .container {
-  display: flex;
-  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
 }
 
-/* LEFT PANEL */
-.left-panel {
-  flex: 1;
-  background: linear-gradient(to bottom, #1b1b2f, #0f0f1a);
-  padding: 40px;
+/* ===== Panels ===== */
+.panel {
+  background: #020617; /* dark navy */
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  border: 1px solid #1e293b;
 }
 
-/* APP NAME AT TOP */
-.app-name {
-  color: white;
-  font-size: 36px;
-  font-weight: bold;
-}
-
-/* RIGHT PANEL */
-.right-panel {
-  flex: 1;
-  background: #ffffff;
-  padding: 80px;
-}
-
-.right-panel h2 {
-  margin-bottom: 30px;
-}
-
-/* INPUTS */
-input {
+/* ===== Textarea ===== */
+textarea {
   width: 100%;
   padding: 12px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  font-size: 14px;
+  background: #020617;
+  color: #e5e7eb;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  resize: vertical;
 }
 
-/* BUTTON */
+textarea:focus {
+  outline: none;
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.25);
+}
+
+/* ===== Buttons ===== */
 button {
-  width: 100%;
-  padding: 12px;
-  background: #5a7bff;
+  padding: 10px 14px;
   border: none;
-  color: white;
-  font-size: 16px;
-  border-radius: 5px;
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  color: #020617;
+  font-size: 14px;
   cursor: pointer;
+  border-radius: 6px;
+  margin-right: 8px;
+  font-weight: 600;
+}
+
+button.secondary {
+  background: linear-gradient(135deg, #64748b, #475569);
+  color: #e5e7eb;
 }
 
 button:hover {
-  background: #3f5fe0;
+  opacity: 0.9;
 }
 
-/* SIGNUP */
-.signup {
-  margin-top: 15px;
-  color: #555;
-  font-size: 14px;
+/* ===== Status ===== */
+.status {
+  font-size: 13px;
+  margin-bottom: 10px;
+  color: #94a3b8;
 }
+
+/* ===== Output ===== */
+.output {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #e5e7eb;
+}
+
+.output h3 {
+  margin-top: 20px;
+  color: #38bdf8;
+}
+
+.output h4 {
+  margin-top: 16px;
+  color: #a5b4fc;
+}
+
+.output ul {
+  margin-left: 20px;
+}
+
+.output pre {
+  background: #020617;
+  padding: 12px;
+  border-radius: 8px;
+  overflow-x: auto;
+  border: 1px solid #1e293b;
+}
+
+/* ===== Placeholder Text ===== */
+.placeholder {
+  color: #64748b;
+}
+

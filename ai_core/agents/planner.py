@@ -1,7 +1,12 @@
-def plan_tasks(query: str) -> list[str]:
+def plan_research(query: str) -> list[str]:
+    """
+    Breaks a research query into structured subtasks.
+    """
     return [
-        "Current state of " + query,
-        "Benefits and advantages",
-        "Risks and challenges",
-        "Future outlook"
+        f"Definition and core idea of {query}",
+        f"How {query} works",
+        f"Benefits and strengths of {query}",
+        f"Limitations and risks of {query}",
+        f"Real-world applications of {query}",
+        f"Future directions of {query}",
     ]

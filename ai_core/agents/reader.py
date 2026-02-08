@@ -1,14 +1,27 @@
-# ai_core/agents/reader.py
+from typing import List, Dict
 
-def read_sources(results: list[dict]) -> dict:
-    summaries = []
-    key_points = []
+def read_sources(results: List[Dict], subtask: str) -> List[Dict]:
+    """
+    Convert search results into STRONG research notes.
+    Each note must be a standalone factual statement.
+    """
+
+    notes = []
 
     for r in results:
-        summaries.append(r.get("snippet", ""))
-        key_points.append(r.get("title", ""))
+        snippet = r.get("snippet", "").strip()
+        link = r.get("link", "")
 
-    return {
-        "summary": " ".join(summaries),
-        "key_points": key_points
-    }
+        if len(snippet) < 40:
+            continue  # too weak
+
+        note = {
+            "subtask": subtask,
+            "claim": snippet,
+            "source": link,
+        }
+
+        notes.append(note)
+
+    return notes
+

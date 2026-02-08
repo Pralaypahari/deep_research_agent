@@ -1,8 +1,18 @@
 from typing import TypedDict, List, Dict
 
 class ResearchState(TypedDict):
-    task: str
-    search_results: List[Dict]
-    content: Dict
-    critique: Dict
-    retries: int
+    query: str
+
+    # Planning
+    subtasks: list[str]
+    completed: dict[str, bool]
+    current_subtask: str | None
+
+    # Research
+    search_results: list[dict]
+    notes: list[dict]        # <-- short-term memory
+
+    answers: dict[str, str]
+    # Critique
+    critique: dict
+

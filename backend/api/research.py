@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
-from typing import List
+from typing import List, Dict
 from ai_core.service import run_deep_research
 
 router = APIRouter()
@@ -13,8 +13,8 @@ class ResearchRequest(BaseModel):
 
 class ResearchResponse(BaseModel):
     query: str
-    summary: str
-    sources_used: List[str]
+    answers: Dict[str, str]
+
 
 
 
@@ -33,8 +33,7 @@ async def run_research(data: ResearchRequest):
     """
     result = run_deep_research(data.query)
 
-    return ResearchResponse(
-        query=data.query,
-        summary="research completed successfully",
-        sources_used=list(result.get("research", {}).keys())
-    )
+    return {
+        "query": result["query"],
+        "answers": result["answers"]
+    }
